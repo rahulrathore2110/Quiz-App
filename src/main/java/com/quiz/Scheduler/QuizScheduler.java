@@ -18,10 +18,6 @@ public class QuizScheduler {
     @Autowired
     private QuizDao quizDao;
 
-//    public QuizScheduler(QuizDao quizDao) {
-//        this.quizDao = quizDao;
-//    }
-
     @Scheduled(cron = "0 0/1 * * * ?")
     public void quizStatusUpdate() {
 
