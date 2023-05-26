@@ -21,7 +21,6 @@ public class QuizScheduler {
     }
 
     @Scheduled(cron = "0 0/1 * * * ?")
-    @Transactional
     public void quizStatusUpdate() {
 
 
@@ -74,7 +73,6 @@ public class QuizScheduler {
         if (!inactiveQuizzes.isEmpty()) {
             inactiveQuizzes.forEach(q -> q.setStatus(Status.INACTIVE));
             quizDao.saveAll(inactiveQuizzes);
-            quizDao.flush();
         }
 
 
@@ -86,7 +84,9 @@ public class QuizScheduler {
         if (!activeQuizzes.isEmpty()) {
             activeQuizzes.forEach(q -> q.setStatus(Status.ACTIVE));
             quizDao.saveAll(activeQuizzes);
-            quizDao.flush();
+            System.out.println("flush");
+        }else {
+            System.out.println("not flush");
         }
 
 
@@ -98,7 +98,6 @@ public class QuizScheduler {
         if (!finishedQuizzes.isEmpty()) {
             finishedQuizzes.forEach(q -> q.setStatus(Status.FINISHED));
             quizDao.saveAll(finishedQuizzes);
-            quizDao.flush();
 
         }
 
