@@ -67,6 +67,7 @@ public class QuizServiceImpl implements QuizService {
         /** Get the minutes Duration between the quiz start and end timings */
         Long duration = Duration.between(quiz.getEndDate(), LocalDateTime.now()).toMinutes();
 
+
         /** if duration is greater than 5 Return the QuizDTO object as a result data to the user
          * because duration greater than 5 quiz mean quiz is finished else throw the exception to
          * user */

@@ -53,6 +53,8 @@ public class QuizScheduler {
 
 
 
+
+
         /**
          Get the list of all quizzes from the database.
          filter out the list get the all quiz and compare end Date with currentDateTime.
@@ -64,7 +66,9 @@ public class QuizScheduler {
                 .filter(q -> q.getEndDate().isBefore(currentDateTime))
                 .collect(Collectors.toList());
 
-
+        System.out.println(inactiveQuizzes);
+        System.out.println(activeQuizzes);
+        System.out.println(finishedQuizzes);
         /**
          First checking if inactiveQuizzes is empty or not.
          if not empty iterate the inactiveQuizzes and set the active status of each element of list.
@@ -73,6 +77,9 @@ public class QuizScheduler {
         if (!inactiveQuizzes.isEmpty()) {
             inactiveQuizzes.forEach(q -> q.setStatus(Status.INACTIVE));
             quizDao.saveAll(inactiveQuizzes);
+            System.out.println("inactive ");
+        }else {
+            System.out.println("inactive else");
         }
 
 
@@ -84,10 +91,11 @@ public class QuizScheduler {
         if (!activeQuizzes.isEmpty()) {
             activeQuizzes.forEach(q -> q.setStatus(Status.ACTIVE));
             quizDao.saveAll(activeQuizzes);
-            System.out.println("flush");
+            System.out.println("active ");
         }else {
-            System.out.println("not flush");
+            System.out.println("active else");
         }
+
 
 
         /**
@@ -98,8 +106,11 @@ public class QuizScheduler {
         if (!finishedQuizzes.isEmpty()) {
             finishedQuizzes.forEach(q -> q.setStatus(Status.FINISHED));
             quizDao.saveAll(finishedQuizzes);
-
+            System.out.println("Fin ");
+        }else {
+            System.out.println("Fin else");
         }
+
 
     }
 }
