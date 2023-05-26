@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/quizzes")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class QuizController {
 
 
