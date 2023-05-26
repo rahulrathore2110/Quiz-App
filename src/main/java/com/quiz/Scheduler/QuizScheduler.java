@@ -3,6 +3,7 @@ package com.quiz.Scheduler;
 import com.quiz.Model.Quiz;
 import com.quiz.Model.Status;
 import com.quiz.Repository.QuizDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 @Component
 public class QuizScheduler {
 
+    @Autowired
     private QuizDao quizDao;
 
 //    public QuizScheduler(QuizDao quizDao) {
