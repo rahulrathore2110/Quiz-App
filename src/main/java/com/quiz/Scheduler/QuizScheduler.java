@@ -19,7 +19,7 @@ public class QuizScheduler {
         this.quizDao = quizDao;
     }
 
-    @Scheduled(cron = "0 */1 * * * *")
+    @Scheduled(cron = "0 */1 * * * ?")
     public void quizStatusUpdate() {
 
 
@@ -51,6 +51,7 @@ public class QuizScheduler {
                 .collect(Collectors.toList());
 
 
+
         /**
          Get the list of all quizzes from the database.
          filter out the list get the all quiz and compare end Date with currentDateTime.
@@ -71,6 +72,7 @@ public class QuizScheduler {
         if (!inactiveQuizzes.isEmpty()) {
             inactiveQuizzes.forEach(q -> q.setStatus(Status.INACTIVE));
             quizDao.saveAll(inactiveQuizzes);
+            quizDao.flush();
         }
 
 
@@ -82,6 +84,7 @@ public class QuizScheduler {
         if (!activeQuizzes.isEmpty()) {
             activeQuizzes.forEach(q -> q.setStatus(Status.ACTIVE));
             quizDao.saveAll(activeQuizzes);
+            quizDao.flush();
         }
 
 
@@ -93,6 +96,8 @@ public class QuizScheduler {
         if (!finishedQuizzes.isEmpty()) {
             finishedQuizzes.forEach(q -> q.setStatus(Status.FINISHED));
             quizDao.saveAll(finishedQuizzes);
+            quizDao.flush();
+
         }
 
     }
