@@ -9,8 +9,7 @@ import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Quiz {
 
     @Id
@@ -21,6 +20,8 @@ public class Quiz {
     @NotNull(message = "Description cannot be null")
     private String description;
 
+    @ElementCollection
+    @CollectionTable(name = "Quiz Options")
     @Column(nullable = false)
     @NotNull(message = "Options cannot be null")
     private List<String> options;

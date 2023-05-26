@@ -1,14 +1,12 @@
 package com.quiz.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
+@RequiredArgsConstructor
 @AllArgsConstructor
 public class QuizDTO {
 
