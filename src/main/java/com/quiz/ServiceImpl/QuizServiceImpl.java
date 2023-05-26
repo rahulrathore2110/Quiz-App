@@ -71,7 +71,7 @@ public class QuizServiceImpl implements QuizService {
         /** if duration is greater than 5 Return the QuizDTO object as a result data to the user
          * because duration greater than 5 quiz mean quiz is finished else throw the exception to
          * user */
-        System.out.println(duration);
+        System.out.println(duration + "date");
         if (duration > 5) {
             QuizDTO quizDTO = new QuizDTO(quiz.getDescription(), quiz.getOptions(),
                     quiz.getAnswer());
