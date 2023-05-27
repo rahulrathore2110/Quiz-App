@@ -1,15 +1,16 @@
-#  Quiz-App REST API Documentation
-This documentation provides an overview of the endpoints available in the  Quiz System API.
+#  Quiz-App EndPoint Documentation
+This documentation provides an overview of the endpoints available in the Quiz-App.
 
 ## Base URL
-The base URL for accessing the API is: https://quizsystem-production.up.railway.app/quizzes
-### Quiz Resource
+The base URL for accessing the Endpoint is: https://quizsystem-production.up.railway.app/quizzes
 
-### Create a Quiz
+### Quiz-App All Endpoints
+
+### Create a new Quiz
 
    - URL: https://quizsystem-production.up.railway.app/quizzes
    - Method: POST
-   - Description: Create a new quiz.
+   - Description: User can create a new quiz in the database.
    - Request Body:
    
     {
@@ -49,7 +50,8 @@ The base URL for accessing the API is: https://quizsystem-production.up.railway.
  
    - URL: https://quizsystem-production.up.railway.app/quizzes/active
    - Method: GET
-   - Description: Get a list of active quizzes (quizzes that are currently within their start and end time).
+   - Description: User can get a list of active quizzes, active quizzes are (those quizzes that currently lie in between startDate and endDate of the quiz).
+   
    - Response Body:
 
 
@@ -89,10 +91,9 @@ The base URL for accessing the API is: https://quizsystem-production.up.railway.
    
    -  URL: https://quizsystem-production.up.railway.app/quizzes/{id}/result
    -  Method: GET
-   - Description: Get the result of a quiz by its ID.
-   - Path Variable:
-
-   - {id}: ID of the quiz
+   - Description: User can get the result of particular quiz by their quiz id.
+   - Path Variable: {id}: ID of the quiz
+   
    - Response Body:
 
     {
@@ -111,7 +112,7 @@ The base URL for accessing the API is: https://quizsystem-production.up.railway.
 
    - URL: https://quizsystem-production.up.railway.app/quizzes/all
    - Method: GET
-   - Description: Get a list of all quizzes.
+   - Description: User can get a list of All quizzes wheather quiz has ACTIVE, INACTIVE or FINISHED status.
 
    - Response Body:
     
