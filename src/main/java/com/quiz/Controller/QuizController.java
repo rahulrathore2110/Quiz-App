@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Time;
+
 import java.util.List;
 import java.util.TimeZone;
 
@@ -24,7 +24,7 @@ public class QuizController {
 
     @PostConstruct
     public void init(){
-        TimeZone.setDefault(TimeZone.getTimeZone("+05:30"));
+        TimeZone.setDefault(TimeZone.getTimeZone("desired_time_zone"));
     }
 
 
