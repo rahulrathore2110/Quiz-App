@@ -22,11 +22,6 @@ public class QuizController {
     @Autowired
     private QuizService quizService;
 
-    @PostConstruct
-    public void init(){
-        TimeZone.setDefault(TimeZone.getTimeZone("desired_time_zone"));
-    }
-
 
     /**
      * create a quiz in the database, pass the quiz entity payload in json format.
