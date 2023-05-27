@@ -24,7 +24,7 @@ public class QuizController {
 
     @PostConstruct
     public void init(){
-        TimeZone.setDefault(TimeZone.getTimeZone("desired_time_zone"));
+        TimeZone.setDefault(TimeZone.getTimeZone("+05:30"));
     }
 
 
