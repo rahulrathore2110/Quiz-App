@@ -4,12 +4,15 @@ import com.quiz.DTO.QuizDTO;
 import com.quiz.Exception.QuizException;
 import com.quiz.Model.Quiz;
 import com.quiz.Service.QuizService;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Time;
 import java.util.List;
+import java.util.TimeZone;
 
 @RestController
 @RequestMapping("/quizzes")
@@ -18,6 +21,11 @@ public class QuizController {
 
     @Autowired
     private QuizService quizService;
+
+    @PostConstruct
+    public void init(){
+        TimeZone.setDefault(TimeZone.getTimeZone("desired_time_zone"));
+    }
 
 
     /**
