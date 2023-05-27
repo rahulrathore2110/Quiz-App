@@ -46,7 +46,7 @@ The base URL for accessing the Endpoint is: https://quizsystem-production.up.rai
     
     
     
- ###  Get Active Quizzes
+ ###  Get List Of Active Quizzes
  
    - URL: https://quizsystem-production.up.railway.app/quizzes/active
    - Method: GET
@@ -87,7 +87,7 @@ The base URL for accessing the Endpoint is: https://quizsystem-production.up.rai
     ]
     
     
-   ### Get Quiz Result
+   ### Get Particular Quiz Result By Their Id
    
    -  URL: https://quizsystem-production.up.railway.app/quizzes/{id}/result
    -  Method: GET
@@ -108,7 +108,7 @@ The base URL for accessing the Endpoint is: https://quizsystem-production.up.rai
     
     
     
-### Get All Quizzes
+### Get The List Of All Quizzes
 
    - URL: https://quizsystem-production.up.railway.app/quizzes/all
    - Method: GET
