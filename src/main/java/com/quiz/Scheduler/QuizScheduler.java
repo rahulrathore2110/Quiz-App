@@ -33,7 +33,7 @@ public class QuizScheduler {
          */
         List<Quiz> activeQuizzes = quizDao.findAll()
                 .stream()
-                .filter(q -> q.getStartDate().isBefore(currentDateTime) && q.getEndDate().isAfter(currentDateTime))
+                .filter(quiz -> quiz.getStartDate().isBefore(currentDateTime) && quiz.getEndDate().isAfter(currentDateTime))
                 .collect(Collectors.toList());
 
 
@@ -46,7 +46,7 @@ public class QuizScheduler {
          */
         List<Quiz> inactiveQuizzes = quizDao.findAll()
                 .stream()
-                .filter(q -> q.getStartDate().isAfter(currentDateTime))
+                .filter(quiz -> quiz.getStartDate().isAfter(currentDateTime))
                 .collect(Collectors.toList());
 
 
@@ -59,7 +59,7 @@ public class QuizScheduler {
          */
         List<Quiz> finishedQuizzes = quizDao.findAll()
                 .stream()
-                .filter(q -> q.getEndDate().isBefore(currentDateTime))
+                .filter(quiz -> quiz.getEndDate().isBefore(currentDateTime))
                 .collect(Collectors.toList());
 
 
@@ -70,7 +70,7 @@ public class QuizScheduler {
          after that save the all list item to the database through JPA repository.
          */
         if (!inactiveQuizzes.isEmpty()) {
-            inactiveQuizzes.forEach(q -> q.setStatus(Status.INACTIVE));
+            inactiveQuizzes.forEach(quiz -> quiz.setStatus(Status.INACTIVE));
             quizDao.saveAll(inactiveQuizzes);
         }
 
@@ -81,7 +81,7 @@ public class QuizScheduler {
          after that save the all list item to the database through JPA repository.
          */
         if (!activeQuizzes.isEmpty()) {
-            activeQuizzes.forEach(q -> q.setStatus(Status.ACTIVE));
+            activeQuizzes.forEach(quiz -> quiz.setStatus(Status.ACTIVE));
             quizDao.saveAll(activeQuizzes);
         }
 
@@ -93,7 +93,7 @@ public class QuizScheduler {
          after that save the all list item to the database through JPA repository.
          */
         if (!finishedQuizzes.isEmpty()) {
-            finishedQuizzes.forEach(q -> q.setStatus(Status.FINISHED));
+            finishedQuizzes.forEach(quiz -> quiz.setStatus(Status.FINISHED));
             quizDao.saveAll(finishedQuizzes);
         }
 
