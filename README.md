@@ -8,7 +8,7 @@ The base URL for accessing the Endpoint is: https://quizsystem-production.up.rai
 
 ### Create a new Quiz
 
-   - URL: https://quizsystem-production.up.railway.app/quizzes
+   - URL: https://quiz-app-production-2a1f.up.railway.app/quizzes
    - Method: POST
    - Description: User can create a new quiz in the database.
    - Request Body:
@@ -48,7 +48,7 @@ The base URL for accessing the Endpoint is: https://quizsystem-production.up.rai
     
  ###  Get List Of Active Quizzes
  
-   - URL: https://quizsystem-production.up.railway.app/quizzes/active
+   - URL: https://quiz-app-production-2a1f.up.railway.app/quizzes/active
    - Method: GET
    - Description: User can get a list of active quizzes, active quizzes are (those quizzes that currently lie in between startDate and endDate of the quiz).
    
@@ -89,7 +89,7 @@ The base URL for accessing the Endpoint is: https://quizsystem-production.up.rai
     
    ### Get Particular Quiz Result By Their Id
    
-   -  URL: https://quizsystem-production.up.railway.app/quizzes/{id}/result
+   -  URL: https://quiz-app-production-2a1f.up.railway.app/quizzes/{id}/result
    -  Method: GET
    - Description: User can get the result of particular quiz by their quiz id.
    - Path Variable: {id}: ID of the quiz
@@ -110,7 +110,7 @@ The base URL for accessing the Endpoint is: https://quizsystem-production.up.rai
     
 ### Get The List Of All Quizzes
 
-   - URL: https://quizsystem-production.up.railway.app/quizzes/all
+   - URL: https://quiz-app-production-2a1f.up.railway.app/quizzes/all
    - Method: GET
    - Description: User can get a list of All quizzes wheather quiz has ACTIVE, INACTIVE or FINISHED status.
 

@@ -4,6 +4,7 @@ import com.quiz.DTO.QuizDTO;
 import com.quiz.Exception.QuizException;
 import com.quiz.Model.Quiz;
 import com.quiz.Service.QuizService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class QuizController {
      * @throws QuizException
      */
     @PostMapping
-    public ResponseEntity<Quiz> createQuizHandler(@RequestBody Quiz quiz) throws QuizException {
+    public ResponseEntity<Quiz> createQuizHandler(@Valid @RequestBody Quiz quiz) throws QuizException {
         Quiz addVendor =  quizService.createQuiz(quiz);
         return new ResponseEntity<Quiz>(addVendor, HttpStatus.CREATED);
     }
