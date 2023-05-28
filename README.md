@@ -2,7 +2,7 @@
 This documentation provides an overview of the endpoints available in the Quiz-App.
 
 ## Base URL
-The base URL for accessing the Endpoint is: https://quizsystem-production.up.railway.app/quizzes
+The base URL for accessing the Endpoint is: https://quiz-app-production-2a1f.up.railway.app/quizzes
 
 ### Quiz-App All Endpoints
 
